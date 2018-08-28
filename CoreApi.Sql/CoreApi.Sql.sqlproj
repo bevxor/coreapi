@@ -62,4 +62,12 @@
     <Folder Include="dbo\Views" />
     <Folder Include="dbo\StoredProcedures" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Customer.sql" />
+    <Build Include="dbo\Tables\CustomerAddress.sql" />
+    <Build Include="dbo\Tables\Order.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="CoreApi.Sql.refactorlog" />
+  </ItemGroup>
 </Project>
