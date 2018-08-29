@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Repositories", "1. Repos
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Common", "0. Common", "{8BCF5709-7B00-4342-AF37-054A86868E8D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Application", "3. Application", "{09DA3E5B-0AF2-4D99-9CA8-FC25E60C0B84}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{09DA3E5B-0AF2-4D99-9CA8-FC25E60C0B84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApi.Entity", "CoreApi.Entity\CoreApi.Entity.csproj", "{4D789563-DD16-46A1-8DD7-2EF5D71051E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApi.Entity", "CoreApi.Entity\CoreApi.Entity.csproj", "{4D789563-DD16-46A1-8DD7-2EF5D71051E3}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CoreApi.Sql", "CoreApi.Sql\CoreApi.Sql.sqlproj", "{E7C4349D-E1F5-4D23-8C79-6B8A682EBF1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApi.Application", "CoreApi.Application\CoreApi.Application.csproj", "{4F499F30-FADC-4F6C-9F1A-C3CBFE8BD218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApi.Application", "CoreApi.Application\CoreApi.Application.csproj", "{4F499F30-FADC-4F6C-9F1A-C3CBFE8BD218}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
