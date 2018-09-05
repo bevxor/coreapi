@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoreApi.Application\CoreApi.Application.csproj" />
+    <ProjectReference Include="..\CoreApi.Common\CoreApi.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

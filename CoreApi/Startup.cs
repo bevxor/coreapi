@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using CoreApi.Common.AppSettings;
 using CoreApi.InversionOfControl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,8 +29,14 @@ namespace CoreApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
             services.AddAutoMapper();
-            InversionOfControl.ConfigureServices.ConfigureInversionOfControl(services);
+
+            services.ConfigureAppSettings(Configuration);
+
+            services.ConfigureInversionOfControl(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +50,6 @@ namespace CoreApi
             {
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseMvc();
         }
