@@ -9,13 +9,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CoreApi.InversionOfControl
 {
-    public class Configure
+    public static class ConfigureServices
     {
 
-        public void ConfigureInversionOfControl(IServiceCollection servicesCollection)
+        public static void ConfigureInversionOfControl(IServiceCollection servicesCollection)
         {
             servicesCollection.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(@"Server=topnz17943;Database=CoreApi;User ID=coreapiuser;Password=Welcome1;"));
+
             //Services
             servicesCollection.AddTransient<ICustomerService, CustomerService>();
 

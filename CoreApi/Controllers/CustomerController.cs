@@ -16,6 +16,7 @@ namespace CoreApi.Controllers
         {
             _customerService = customerService;
         }
+
         // GET api/customer
         [HttpGet]
         public async Task<ActionResult<List<Customer>>> Get()

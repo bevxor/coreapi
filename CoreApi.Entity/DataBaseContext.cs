@@ -10,10 +10,6 @@ namespace CoreApi.Entity
             : base(options)
         {
         }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");
-        //}
 
         public DbSet<Customer> Customer { get; set; }
         public DbSet<CustomerAddress> CustomerAddresse { get; set; }
