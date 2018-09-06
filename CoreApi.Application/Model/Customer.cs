@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoreApi.Application.Model
 {
@@ -6,8 +7,10 @@ namespace CoreApi.Application.Model
     {
         public int CustomerId { get; set; }
 
+        [Required]
         public string FirstName { get; set; }
 
+        [Required]
         public string Surname { get; set; }
 
         public List<CustomerAddress> CustomerAddresses { get; set; }

@@ -7,6 +7,7 @@ using CoreApi.Entity.Contracts;
 using CoreApi.Entity.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace CoreApi.InversionOfControl
 {
@@ -28,6 +29,22 @@ namespace CoreApi.InversionOfControl
         public static void ConfigureAppSettings(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
+        }
+
+        public static void ConfigureSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(sw =>
+                {
+                    sw.SwaggerDoc("CoreApi", new Info {Title = "Core Api Demo", Version = "0.1"});
+                    sw.IncludeXmlComments(GetXmlCommentsPathForSwagger());
+                });
+        }
+
+        public static string GetXmlCommentsPathForSwagger()
+        {
+            return
+                System.IO.Path.Combine(
+                    System.AppContext.BaseDirectory, "CoreApiSwagger.xml");
         }
     }
 }

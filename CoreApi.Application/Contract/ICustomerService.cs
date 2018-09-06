@@ -6,6 +6,8 @@ namespace CoreApi.Application.Contract
 {
     public interface ICustomerService
     {
-        Task<List<Customer>> GetAll();
+        Task<List<Customer>> GetAllAsync();
+        Task<Customer> GetByIdAsync(int customerId);
+        Task CreateAsync(Customer customer);
     }
 }

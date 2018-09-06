@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreApi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
@@ -17,36 +18,47 @@ namespace CoreApi.Controllers
             _customerService = customerService;
         }
 
-        // GET api/customer
+        /// <summary>
+        /// Gets a List of all Customers.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Customer>>> Get()
         {
-            return await _customerService.GetAll();
+            return await _customerService.GetAllAsync();
         }
 
-        // GET api/customer/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        /// <summary>
+        /// Gets a Customer from the given Id.
+        /// </summary>
+        /// <remarks>This API will get the Customer for the given customer id.</remarks>
+        /// <param name="customerId"></param>
+        [HttpGet("{customerId}")]
+        public async Task<ActionResult<Customer>> Get(int customerId)
         {
-            return "value";
+            return await _customerService.GetByIdAsync(customerId);
         }
 
-        // POST api/customer
+        /// <summary>
+        /// Creates a Customer in the Database.
+        /// </summary>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Create([FromBody] Customer customer)
         {
+            await _customerService.CreateAsync(customer);
         }
 
         // PUT api/customer/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{customerId}")]
+        public void Put(int customerId, [FromBody] Customer customer)
         {
+
         }
 
         // DELETE api/customer/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{customerId}")]
+        public async Task  Delete(int customerId)
         {
+
         }
     }
 }
