@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Mindscape.Raygun4Net.AspNetCore;
 
 namespace CoreApi
 {
@@ -37,6 +38,8 @@ namespace CoreApi
             services.ConfigureInversionOfControl(Configuration);
 
             services.ConfigureSwagger();
+
+            services.AddRaygun(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +54,7 @@ namespace CoreApi
                 app.UseHsts();
             }
 
+            app.UseRaygun();
             app.ConfigureSwaggerUi();
 
             app.UseHttpsRedirection();

@@ -1,7 +1,7 @@
-﻿namespace CoreApi.Common.AppSettings
+﻿namespace CoreApi.Common.Contract
 {
     public interface IAppSettings
     {
-        string RaygunKey { get; }
+        string SomeConfigValue { get; }
     }
 }

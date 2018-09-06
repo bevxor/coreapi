@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CoreApi.Entity.Contracts;
 using CoreApi.Entity.Model;
@@ -23,6 +24,7 @@ namespace CoreApi.Entity.Repositories
 
         public async Task<Customer> GetByIdAsync(int customerId)
         {
+            throw new NullReferenceException("Testing raygun error");
             return await _databaseContext.Customer.AsNoTracking()
                 .SingleOrDefaultAsync(x => x.CustomerId.Equals(customerId));
         }
