@@ -12,7 +12,7 @@ namespace CoreApi.Entity
         }
 
         public DbSet<Customer> Customer { get; set; }
-        public DbSet<CustomerAddress> CustomerAddresse { get; set; }
+        public DbSet<CustomerAddress> CustomerAddress { get; set; }
         public DbSet<Order> Order { get; set; }
     }
 }

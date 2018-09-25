@@ -24,7 +24,6 @@ namespace CoreApi.Entity.Repositories
 
         public async Task<Customer> GetByIdAsync(int customerId)
         {
-            throw new NullReferenceException("Testing raygun error");
             return await _databaseContext.Customer.AsNoTracking()
                 .SingleOrDefaultAsync(x => x.CustomerId.Equals(customerId));
         }

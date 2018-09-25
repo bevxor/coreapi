@@ -43,7 +43,7 @@ namespace CoreApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -56,6 +56,9 @@ namespace CoreApi
 
             app.UseRaygun();
             app.ConfigureSwaggerUi();
+
+            //Populate database with test data
+            app.PopulateDatabase(serviceProvider);
 
             app.UseHttpsRedirection();
             app.UseMvc();
